@@ -1,0 +1,82 @@
+/*
+Write a program to calculate profit from a set of share prices.
+
+An array A consisting of N integers is given. It contains daily prices of a stock share for a period of N consecutive days. If a single share 
+
+was bought on day P and sold on day Q, where 0 <= P <= Q < N, then the profit of such transaction is equal to A[Q] − A[P], provided that 
+
+A[Q] >= A[P]. 
+Otherwise, the transaction brings loss of A[P] − A[Q].
+
+For example, consider the following array A consisting of six elements such that:
+A[0] = 23171 A[1] = 21011 A[2] = 21123 A[3] = 21366 A[4] = 21013 A[5] = 21367
+
+If a share was bought on day 0 and sold on day 2, a loss of 2048 would occur because A[2] − A[0] = 21123 − 23171 = −2048. 
+If a share was bought on day 4 and sold on day 5, a profit of 354 would occur because A[5] − A[4] = 21367 − 21013 = 354. 
+Maximum possible profit was 356. It would occur if a share was bought on day 1 and sold on day 5.
+
+Write an efficient algorithm for the following assumptions:
+N is an integer within the range [0..400,000];
+each element of array A is an integer within the range [0..200,000].
+
+Note : The file/class should be named as "ShareMarketProfit" with appropriate file extension.
+
+Input Format : 
+First line of input consists of a single integer 'N' which is the size of the array.
+Next 'N' lines consists of 'N' integers which are part of array A.
+
+Output Format : 
+Output consists of a single integer which is the maximum profit that the user can earn.
+
+Test Input 1 : 
+	6
+	23187
+	92727
+	231
+	4563
+	123131
+	1311
+Output:  
+	122900
+
+Test Input 2 : 
+	4
+	200
+	200
+	200
+	200
+Output:  
+	0
+	
+Test Input 3 : 
+	6
+	123
+	754
+	1543
+	2413
+	8575
+	1231
+Output:  
+	8452
+*/
+
+
+//PROGRAM:
+import java.util.*;
+public class ShareMarketProfit{
+public static void main(String[] args){
+int num,i,j,diff,max;
+Scanner scan=new Scanner(System.in);
+num=scan.nextInt();
+int arr[]=new int[num];
+for(i=0;i<num;i++)
+arr[i]=scan.nextInt();
+max=0;
+for(i=0;i<arr.length-1;i++){
+for(j=i;j<arr.length;j++){
+diff=arr[j]-arr[i];
+if(diff>max)
+max=diff;
+}}
+System.out.println(max);
+}}
