@@ -1,0 +1,58 @@
+/*
+ Reverse each word in a given string
+
+Given a String of length N reverse each word in it. Words are separated by spaces. Dot character should not be reversed and should retain 
+
+its position.
+
+Note : Save the file / class as “reverseEachStr” with appropriate file extension.
+
+Input:
+The first line contains T denoting the number of testcases. Then follows description of testcases. Each case contains a string containing 
+
+dots, spaces and characters.
+ 
+Output:
+For each test case, output a String in single line containing the reversed words of the given String.
+
+Constraints:
+1<=T<=10
+1<=Length of String<=2000
+
+Example:
+Input:
+2
+i like this program very much
+hello
+
+Output:
+i ekil siht margorp yrev hcum
+olleh
+*/
+
+
+
+//PROGRAM:
+import java.util.*;
+public class ReverseEachStr{
+   public static void main(String[] args){
+	int test_case,i;
+	Scanner scan=new Scanner(System.in);
+	System.out.println("Enter the  number of test cases:");
+	test_case=scan.nextInt();
+	for(i=0;i<test_case;i++)
+	{
+		String str;
+		int j,k;
+		Scanner scan2=new Scanner(System.in);
+		System.out.println("Enter the string:");
+		str=scan2.nextLine();
+		String str_arr[]=str.split(" ");
+		for(j=0;j<str_arr.length;j++){
+			for(k=str_arr[j].length()-1;k>=0;k--)
+				System.out.print(str_arr[j].charAt(k));
+			System.out.print(" ");
+				}
+		System.out.println();
+	}
+}}
