@@ -1,0 +1,63 @@
+/*
+ Implement strstr manually
+
+Your task is to implement the function strstr. The function takes two strings as arguments (s,x) and  locates the occurrence of the string x 
+
+in the string s. The function returns and integer denoting the first occurrence of the string x in s.
+
+Note : Save the file / class as “SubStr” with appropriate file extension.
+
+Input Format:
+The first line of input contains an integer T denoting the no of test cases . Then T test cases follow. Each test case has 2 lines of input, first 
+
+list the search string s and second line the occurrence of string x
+
+Output Format:
+For each test case, in a new line, output will be an integer denoting the first occurrence of the x in the string s. Return -1 if no match 
+
+found.
+NOTE: If there is a match on the first element answer should be 0 and not 1 given that array index starts at 0
+
+Constraints:
+1 <= T <= 100
+1<= |s|,|x| <= 1000
+
+Example:
+Input
+2
+ItVACForSuccess	
+Fr
+ITVACForsuccess	
+For
+Output
+-1
+5
+
+Explanation:
+Testcase 1: Fr is not present in the string ItVACForSuccess as substring.
+Testcase 2: For is present as substring in ITVACForsuccess from index 5 given that array index starts at 0.
+*/
+
+
+
+//PROGRAM:
+import java.util.*;
+public class SubStr{
+   public static void main(String[] args){
+	int test_case,i;
+	Scanner scan=new Scanner(System.in);
+	System.out.println("Enter the  number of test cases:");
+	test_case=scan.nextInt();
+	for(i=0;i<test_case;i++)
+	{
+		String str1,str2;
+		Scanner scan2=new Scanner(System.in);
+		System.out.println("Enter the strings:");
+		str1=scan2.next();
+		str2=scan2.next();
+		if(str1.contains(str2)==true)
+			System.out.println(str1.indexOf(str2));
+		else
+			System.out.println("-1");
+	}
+}}
