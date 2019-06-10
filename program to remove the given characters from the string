@@ -1,0 +1,65 @@
+/*
+Remove Characters in a String
+
+Given two strings s1 and s2, remove those characters from first string which are present in second string. Both the strings are different and contain only 
+
+lowercase characters.
+
+Note : Save the file / class as “removeStringChars” with appropriate file extension.
+
+Input:
+
+The first line of input contains an integer T denoting the number of test cases.
+The first line of each test case is s1,s1 is first string.
+The second line of each test case contains s2,s2 is second string.
+
+Output:
+
+Print the modified string(s1). For each test case, print the output in a new line.
+
+Constraints:
+
+1 ≤ T ≤ 15
+1 ≤ s2 < s1 ≤ 50
+
+Example:
+
+Input:
+2
+itvaccodingteam
+caw
+removeccharaterfrom
+string
+
+Output:
+
+itvodingtem
+emovecchaaefom
+*/
+
+
+
+//PROGRAM:
+import java.util.*;
+public class RemoveStringChars{
+   public static void main(String[] args){
+	int test_case,i;
+	Scanner scan=new Scanner(System.in);
+	System.out.println("Enter the  number of test cases:");
+	test_case=scan.nextInt();
+	for(i=0;i<test_case;i++)
+	{
+		String str1,str2;
+		int flag=1,j,k;
+		Scanner scan2=new Scanner(System.in);
+		System.out.println("Enter the strings:");
+		str1=scan2.next();
+		str2=scan2.next();
+		j=0;
+		while(j<str1.length()){
+			if(str2.indexOf(str1.charAt(j))==-1)
+				System.out.print(str1.charAt(j));
+			j++;
+				}System.out.println();
+	}
+}}
