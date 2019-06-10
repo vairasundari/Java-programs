@@ -1,0 +1,80 @@
+/*
+ Write a program to find longest binary gap in a given number.
+
+A binary gap within a positive integer N is any maximal sequence of consecutive zeros that is surrounded by ones at both ends in the 
+
+binary representation of N.
+
+Note : The file/class should be named as "LongestBinGap" with appropriate file extension.
+
+For example, 
+Number 9 has binary representation 1001 and contains a binary gap of length 2. 
+The number 529 has binary representation 1000010001 and contains two binary gaps: one of length 4 and one of length 3. 
+The number 20 has binary representation 10100 and contains one binary gap of length 1. 
+The number 15 has binary representation 1111 and has no binary gaps. 
+The number 32 has binary representation 100000 and has no binary gaps.
+
+For example, given N = 1041 the function should return 5, because N has binary representation 10000010001 and so its longest binary gap 
+
+is of length 5. Given N = 32 the function should return 0, because N has binary representation '100000' and thus no binary gaps.
+
+Write an efficient algorithm for the following assumptions:
+N is an integer within the range [1..2,147,483,647].
+
+Input Format : 
+Input contains a single line which consists of a single Integer.
+
+Output Format : 
+Output consists of a single integer.
+
+Test Case 1 :
+Input : 
+	125
+Output : 
+	1
+	
+Test Case 2 :
+Input : 
+	32
+Output : 
+	0
+	
+Test Case 3 :
+Input : 
+	714
+Output : 
+	2
+	
+Test Case 4 :
+Input : 
+	305
+Output : 
+	3
+*/
+
+
+
+//PROGRAM:
+import java.util.*;
+public class LongestBinGap{
+	public static void main(String[] args){
+		int num,i,k=0;
+		String binary;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter a number:");
+		num=scan.nextInt();
+		binary=Integer.toBinaryString(num);
+		int arr[]=new int[binary.length()];
+		for(i=0;i<binary.length();i++){
+			if(binary.charAt(i)=='1'){
+				arr[k]=i;
+				k++;
+				}}
+		int max=0,diff;
+		for(i=0;i<arr.length-1;i++){
+		diff=arr[i+1]-arr[i];
+		if(diff-1>max)
+		max=diff-1;
+			}
+		System.out.println(max);
+	}}
