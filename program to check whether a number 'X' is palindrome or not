@@ -1,0 +1,68 @@
+/*
+Write a C program to check whether a number 'X' is palindrome or not.
+
+Note : The file/class should be named as "Palindrome" with appropriate file extension.
+
+Conditions : 
+0 <= X <= 9999999 
+
+Input Format :
+The first line of input consists of only one Integer which is X.
+
+Output Format : 
+Print True if X is a palindrome number. Print False if X is not a palindrome number.
+
+Test Case1:
+Input:
+	1001
+Output:
+	True
+
+Test Case2:
+Input:
+	1021
+Output:
+	False
+	
+Test Case3:
+Input: 
+	12321
+Output:
+	True
+
+Test Case4:
+Input: 
+	123432
+Output:
+	False
+*/
+
+
+//PROGRAM:
+import java.util.*;
+public class Palindrome{
+public static void main(String[] args){
+int num,i,count=0,remainder,temp1,temp2,temp_count,remainder1;
+double sum=0;
+Scanner scan=new Scanner(System.in);
+System.out.println("Enter the  number:");
+num=scan.nextInt();
+temp1=temp2=num;
+while(num>0){
+remainder=num%10;
+count++;
+num=num/10;
+}
+temp_count=count-1;
+while(temp1>0 && temp_count>=0){
+remainder1=temp1%10;
+sum=sum+remainder1*(Math.pow(10,temp_count));
+temp_count--;
+temp1=temp1/10;
+}
+
+if(temp2==sum)
+System.out.println("True");
+else
+System.out.println("False");
+}}
