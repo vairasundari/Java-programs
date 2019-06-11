@@ -1,0 +1,63 @@
+/*
+Write a program to determine whether a given number X is a part of the Fibonacci Sequence. [0,1,1,2,3,5...]
+
+Note : The file/class should be named as "IsFibonacciNum" with appropriate file extension.
+
+Conditions : 
+0 <= X <= 1000 
+
+Input Format :
+Input consists of only one Integer which is X.
+
+Output Format : 
+Print True if X is present in the Fibonacci series. Print False if X is not present.
+
+Sample IO : 
+Test Case1:
+Input :  
+	8
+
+Output:
+	True
+
+Test Case2:
+Input :  
+	233
+
+Output :
+	True
+
+Test Case3:
+Input :  
+	4123
+
+Output :
+	False
+
+Test Case4:
+Input :  
+	17711
+
+Output :
+	True
+*/
+
+
+//PROGRAM:
+import java.util.*;
+public class IsFibonacciNum{
+	public static void main(String[] args){
+	int num,i,f1=0,f2=1,f3=0;
+	Scanner scan=new Scanner(System.in);
+	System.out.println("Enter the  number:");
+	num=scan.nextInt();
+	for(i=0;f3<num;i++){
+		f3=f1+f2;
+		f1=f2;
+		f2=f3;
+		}
+	if(f3==num)
+	System.out.println("True");
+	else
+	System.out.println("False");
+}}                                                                                   
