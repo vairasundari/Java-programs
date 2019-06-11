@@ -1,0 +1,74 @@
+/*
+Pogo Jump 2
+
+This problem was asked by Pinterest.
+
+Given an integer list where each number represents the number of hops you can make, determine whether you can reach to the last index 
+
+starting at index 0.
+
+For example, [2, 0, 1, 0] returns True while [1, 1, 0, 1] returns False.
+
+Input Format :
+First line of the input is an integer N which is the number of points.
+Next N lines of input each contains an integer representing the possible distance of jump from that point.
+
+Output Format : 
+Single line - "True" if able to reach the end of the array / "False" if not able to reach the end of the array.
+
+Constraints : 
+1 <= N <= 100
+0 <= arr[i] <= 10000
+
+Note : The file/class should be named as "PogoJumpToEnd" with appropriate file extension.
+
+Input 1 :
+	4
+	2
+	0
+	1
+	0
+Output 1 :
+	True
+	
+Input 2 :
+	4
+	1
+	1
+	0
+	1
+Output 2 :
+	False
+	
+Input 3 :
+	4
+	0
+	1
+	1
+	0
+Output 3 :
+	False
+*/
+
+
+//PROGRAM:
+import java.util.*;
+  public class PogoJumpToEnd{
+	public static void main(String[] args){
+		int num,i,count=0,temp;
+		Scanner scan=new Scanner(System.in);
+		num=scan.nextInt();
+		int arr[]=new int[num];
+		for(i=0;i<num;i++)
+			arr[i]=scan.nextInt();
+		while(count<arr.length){
+			temp=arr[count];
+			count=count+temp;
+			if(arr[count]==0)
+			break;
+			}
+		if(count==arr.length-1)
+			System.out.println("True");
+		else
+			System.out.println("False");
+	}}
