@@ -1,0 +1,80 @@
+/*
+ Numbers divisible by 'K' in a range.
+
+Write a program that given three integers A, B and K, prints the number of integers within the range [A - B] that are divisible by K.
+
+For example, for A = 6, B = 11 and K = 2, your function should return 3, because there are three numbers divisible by 2 within the range [6..11], namely 6, 8 and 10.
+
+Write an efficient algorithm for the following assumptions:
+A and B are integers within the range [0..2,000,000,000];
+K is an integer within the range [1..2,000,000,000];
+A <= B.
+
+Note : The file/class should be named as "DivisibleByKInRange" with appropriate file extension.
+
+Input Format : 
+The first line of input consists of a single Integer A (lower range).
+The second line of input consists of a single Integer B (upper range).
+The third line of input consists of a single Integer K.
+
+Output Format : 
+Output consists of a single integer which is the number of integers divisible by K within the range A-B.
+
+Test Case 1:
+Input : 
+	5
+	15
+	6
+Output : 
+	2
+
+Test Case 2:
+Input : 
+	2
+	9
+	1
+Output : 
+	8 
+
+Test Case 3:
+Input : 
+	2
+	10
+	2
+Output : 
+	5
+
+Test Case 4:
+Input : 
+	8
+	23
+	4
+Output : 
+	4 
+
+Test Case 5:
+Input : 
+	10
+	20
+	8
+Output : 
+	1
+*/
+
+
+//PROGRAM:
+import java.util.*;
+public class DivisibleByKInRange{
+	public static void main(String[] args){
+		int lower_limit,upper_limit,val,count=0;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter the lower and upper limit:");
+		lower_limit=scan.nextInt();
+		upper_limit=scan.nextInt();
+		System.out.println("Enter the divider:");
+		val=scan.nextInt();
+		for(int i=lower_limit;i<=upper_limit;i++)
+			if(i%val==0)
+			count++;
+		System.out.println(count);
+	}}
