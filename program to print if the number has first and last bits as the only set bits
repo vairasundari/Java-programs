@@ -1,0 +1,54 @@
+/*
+Given a positive integer n, the problem is to print if the number has first and last bits as the only set bits.
+
+Note : The file/class should be named as "EnclosedByOne" with appropriate file extension.
+
+Conditions : 
+0 <= X <= 99999
+
+Input Format :
+The first line of input consists of an Integer which is X.
+
+Output Format : 
+Print "Yes" if the number has first and last bits as the only set bits else print "No".
+
+Test Case1:
+Input : 9
+Output : Yes
+(9)10 = (1001)2, only the first and
+last bits are set.
+
+Test Case2:
+Input : 15
+Output : No
+(15)10 = (1111)2, except first and last
+there are other bits also which are set.
+
+Test Case3:
+Input : 657
+Output : No
+
+Test Case4:
+Input : 513
+Output : Yes
+*/
+
+
+//PROGRAM:
+import java.util.*;
+public class EnclosedByOne{
+	public static void main(String[] args){
+	int number,i,flag=0;
+	Scanner scan=new Scanner(System.in);
+	System.out.println("Enter the  number:");
+	number=scan.nextInt();
+	String binary=Integer.toBinaryString(number);
+	for(i=1;i<binary.length()-1;i++){
+		if(binary.charAt(i)=='1'){
+		flag=1;
+		break;}}
+	if(binary.charAt(0)=='1' && binary.charAt(binary.length()-1)=='1' && flag==0)
+	System.out.println("Yes");
+	else
+	System.out.println("No");
+	}}
