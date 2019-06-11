@@ -1,0 +1,51 @@
+/*
+Write a program to Swap two numbers without using temporary variable.
+
+Note : The file/class should be named as "SwapWithNoTemp" with appropriate file extension.
+
+Conditions : 
+X, Y any finite positive value 
+
+Input Format :
+X - first value 
+Y - second value
+
+Output Format : 
+X - value of X after swap
+Y - value of Y after swap
+
+Sample IO : 
+Test Case:
+Input :  
+2
+15
+
+Output :
+15
+2
+
+Test Case2:
+Input :  
+23
+45
+
+Output :
+45
+23
+*/
+
+
+//PROGRAM:
+import java.util.*;
+public class SwapWithNoTemp{
+public static void main(String[] args){
+int num1,num2;
+Scanner scan=new Scanner(System.in);
+System.out.println("Enter the numbers:");
+num1=scan.nextInt();
+num2=scan.nextInt();
+num1=num1+num2;
+num2=num1-num2;
+num1=num1-num2;
+System.out.println(num1+ " "+num2);
+}}
