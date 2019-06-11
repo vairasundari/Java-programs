@@ -1,0 +1,54 @@
+/*
+Write a program to check if two numbers are equal without using arithmetic operators or comparison operators.
+
+Note : The file/class should be named as "CheckIfEqual" with appropriate file extension.
+
+Conditions : 
+0 <= X <= 99999
+0 <= Y <= 99999
+
+Input Format :
+The first line of input consists of an Integer 'X'.
+The second line of input consists of an Integer 'Y'.
+
+Output Format : 
+Print "Equal" if X=Y else print "Not equal".
+
+Test Case1:
+10
+10
+Equal
+
+Test Case2:
+10
+20
+Not equal
+
+Test Case3:
+17
+17
+Equal
+
+Test Case4:
+17
+27
+Not equal
+*/
+
+
+//PROGRAM:
+import java.util.*;
+public class CheckIfEqual{
+	public static void main(String[] args){
+	int num1,num2;
+	Scanner scan=new Scanner(System.in);
+	System.out.println("Enter the numbers:");
+	num1=scan.nextInt();
+	num2=scan.nextInt();
+	String str1=String.valueOf(num1);
+	String str2=String.valueOf(num2);
+	if (str1.equals(str2))
+	System.out.println("Equal");
+	else
+	System.out.println("Not equal");
+}}
