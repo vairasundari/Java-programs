@@ -1,0 +1,62 @@
+/*
+Write a program to swap even and odd bits of a number represented in binary.
+
+This problem was asked by Cisco.
+
+Given an unsigned integer, swap its even and odd bits. The 1st and 2nd bit should be swapped, the 3rd and 4th bit should be swapped, and 
+
+so on.
+
+For example, 10101010 should be 01010101. 11100010 should be 11010001.
+
+Input Format :
+Input consists of a single integer N.
+
+Output Format : 
+Single integer of bit-swapped input.
+
+Constraints : 
+1 <= N <= 10000
+
+Note : The file/class should be named as "SwapOddEvenBits" with appropriate file extension.
+
+Input 1 : 
+	170
+Output 1 :
+	85
+	
+Input 2 : 
+	226
+Output 2 :
+	209
+
+Input 3 :
+	345		
+Output 3 :
+	678
+*/
+
+
+//PROGRAM:
+import java.util.*;
+public class SwapOddEvenBits{
+	public static void main(String[] args){
+	int Number,i,binary,reverse_num;
+	Scanner scan=new Scanner(System.in);
+	System.out.println("Enter the Number:");
+	Number=scan.nextInt();
+	String bin_num=Integer.toBinaryString(Number);
+	if(bin_num.length()%2!=0)
+		bin_num='0'+bin_num;
+	char ch[]=bin_num.toCharArray();
+	for(i=0;i<ch.length;i+=2){
+		char temp;
+		temp=ch[i];
+		ch[i]=ch[i+1];
+		ch[i+1]=temp;
+	}
+	String str=new String(ch);
+	reverse_num=Integer.parseInt(str,2);
+	System.out.println(reverse_num);
+	
+}}
