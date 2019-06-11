@@ -1,0 +1,72 @@
+/*
+Write a C program to find the largest prime factor of a given number 'X'.
+
+Note : The file/class should be named as "LargestPrime" with appropriate file extension.
+
+Conditions : 
+0 <= X <= 1000 
+
+Input Format :
+The first line of input consists of only one Integer which is X.
+
+Output Format : 
+Output consists of a single line which is the largest prime factor of the given input 'X'. 
+
+Test Case1:
+Input: 
+	6
+Output: 
+	3
+
+Test Case2:
+Input: 
+	15
+Output: 
+	5
+
+Test Case3:
+Input: 
+	127
+Output: 
+	127
+
+Test Case4:
+Input: 
+	287
+Output: 
+	41
+*/
+
+
+
+//PROGRAM:
+import java.util.*;
+public class LargestPrime{
+public static void main(String[] args){
+int num,i,flag=1,k=0,j,m=0;
+Scanner scan=new Scanner(System.in);
+System.out.println("Enter the number");
+num=scan.nextInt();
+int arr[]=new int[num];
+for(i=2;i<=num;i++){
+flag=1;
+for(j=2;j<i;j++){
+if(i%j==0){
+flag=0;
+break;      
+}
+}if(flag==1){
+if(num%i==0){
+arr[k]=i;
+
+k++;
+}}
+}
+
+int max=0;
+for(i=0;i<k;i++)
+if(arr[i]>max)
+max=arr[i];
+System.out.println(max);
+
+}}
