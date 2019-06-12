@@ -1,0 +1,109 @@
+/*
+ Write a program to find the dominator element of an array.
+
+An array A consisting of N integers is given. The dominator of array A is the value that occurs in more than half of the elements of A.
+
+For example, consider array A such that
+A[0] = 3 A[1] = 4 A[2] = 3 A[3] = 2 A[4] = 3 A[5] = -1 A[6] = 3 A[7] = 3
+
+The dominator of A is 3 because it occurs in 5 out of 8 elements of A (namely in those with indices 0, 2, 4, 6 and 7) and 5 is more than a 
+
+half of 8.
+
+Write an efficient algorithm for the following assumptions:
+N is an integer within the range [0..100,000];
+each element of array A is an integer within the range [1..2,147,483,647].
+
+Note : The file/class should be named as "DominatorElement" with appropriate file extension.
+
+Input Format : 
+First line of input consists of a single integer 'N' which is the size of the array.
+Next N lines consists of N integers which are part of the array A.
+
+Output Format : 
+Output consists of a single integer which is the dominator of the given array. If no such element is found print -1.
+
+Test case 1: 
+Input : 
+	8
+	2
+	34
+	33
+	11
+	33
+	44
+	44
+	233
+Output : 
+	-1
+
+Test case 2: 
+Input : 
+	10
+	2
+	3
+	2
+	3
+	2
+	3
+	2
+	3
+	3
+	2
+Output : 
+	-1
+
+Test case 3: 
+Input : 
+	10
+	2
+	3
+	2
+	2
+	3
+	3
+	2
+	2
+	2
+	7
+Output :  
+	2
+
+Test case 4: 
+Input : 
+	5
+	13
+	14
+	13
+	11
+	13
+Output : 
+	13
+*/
+
+
+//PROGRAM:
+import java.util.*;
+public class DominatorElement{
+public static void main(String[] args){
+int num,i,j,count,flag=0;
+Scanner scan=new Scanner(System.in);
+num=scan.nextInt();
+int arr[]=new int[num];
+for(i=0;i<num;i++)
+arr[i]=scan.nextInt();
+for(i=0;i<arr.length;i++){
+count=0;
+for(j=0;j<arr.length;j++){
+if(arr[i]==arr[j])
+count++;}
+if(count>=(arr.length/2)+1){
+flag=1;break;
+}}
+if(flag==0)
+System.out.println("-1");
+else
+System.out.println(arr[i]);
+System.out.println();
+
+}}
