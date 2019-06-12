@@ -1,0 +1,98 @@
+/*
+Write a C program to convert the given number to its roman numeral.
+
+Note : The file/class should be named as "ToRomanNum" with appropriate file extension.
+
+Conditions : 
+0 <= X <= 10000
+
+Input Format :
+The first line of input consists of only one Integer which is X.
+
+Output Format : 
+Print the Roman Numeral corresponding to X.
+
+Test Case1:
+Input : 
+	9
+Output : 
+	IX
+
+Test Case2:
+Input : 
+	40
+Output : 
+	XL
+
+Test Case3:
+Input :  
+	1904
+Output : 
+	MCMIV
+*/
+
+
+
+//PROGRAM:
+import java.util.*;
+   public class ToRomanNum{
+	public static void main(String[] args){
+		int num;
+		String str="";
+		Scanner scan=new Scanner(System.in);
+		num=scan.nextInt();
+		while(num>0){
+			if(num>=900){
+				if(num>=1000){
+					num=num-1000;
+					str=str+"M";}
+				else{
+				num=num-900;
+				str=str+"CM";}
+				}
+			else if(num>=400){
+				if(num>=500){
+					num=num-500;
+					str=str+"D";}
+				else{
+				num=num-400;
+				str=str+"CD";}
+				}
+			else if(num>=90){
+				if(num>=100){
+					num=num-100;
+					str=str+"C";}
+				else{
+				num=num-90;
+				str=str+"XC";}
+				}
+			else if(num>=40){
+				if(num>=50){
+					num=num-50;
+					str=str+"L";}
+				else{
+				num=num-40;
+				str=str+"XL";}
+				}
+			else if(num>=9){
+				if(num>=10){
+					num=num-10;
+					str=str+"X";}
+				else{
+				num=num-9;
+				str=str+"IX";}
+				}
+			else if(num>=4){
+				if(num>=5){
+					num=num-5;
+					str=str+"V";}
+				else{
+				num=num-4;
+				str=str+"IV";}
+				}
+			else{
+				num=num-1;
+				str=str+'I';}
+			}
+	System.out.println(str);
+  }}
